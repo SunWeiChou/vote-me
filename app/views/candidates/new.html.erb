@@ -1,6 +1,6 @@
 <h1>新增候選人</h1>
 
-<%= form_for(Candidate.new) do |f| %>
+<%= form_for(@candidate) do |f| %>
 
 <%= f.label :name, "姓名" %>
 <%= f.text_field :name %>
