@@ -1,5 +1,10 @@
 class CandidatesController < ApplicationController
   def index
+    @candidates = Candidate.all
+  end
+  
+  def show
+    @candidate = Candidate.find_by(id: params[:id])
   end
 
   def new
@@ -18,8 +23,13 @@ class CandidatesController < ApplicationController
     end
   end
 
+  
+
+
+  private
   def condidate_params
     params.require(:candidate).permit(:name, :party, :age, :politics)
   end
+
 
 end

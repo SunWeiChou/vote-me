@@ -1,5 +1,23 @@
 <%= flash[:notice] %>
-
+<br>
+<%= link_to "新增候選人", new_candidate_path %>
 <h1>候選人列表</h1>
 
-<%= link_to "新增候選人", new_candidate_path %>
+<table>
+  <tr>
+    <td>姓名</td>
+    <td>政黨</td>
+    <td>年齡</td>
+    <td>Action</td>
+  </tr>
+
+  <% @candidates.each do |candidate| %>
+    <tr>
+      <td><%= link_to candidate.name, candidate_path(candidate.id) %></td>
+      <td><%= candidate.party %></td>
+      <td><%= candidate.age %></td>
+      <td><%= link_to "編輯", edit_candidate_path(candidate.id) %></td>
+    </tr>
+  <% end %>
+
+</table>

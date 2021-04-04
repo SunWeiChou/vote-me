@@ -1,0 +1,13 @@
+<% if @candidate %>
+
+  <h1><%= @candidate.name %></h1>
+  <ul>
+    <li>年齡：<%= @candidate.age %></li>
+    <li>政黨：<%= @candidate.party %></li>
+  </ul>
+  <h2>政見</h2>
+  <p><%= @candidate.politics %></p>
+
+<% else %>
+  <h1>找不到此頁面！</h1>
+<% end %>
