@@ -1,0 +1,35 @@
+<h1>編輯候選人</h1>
+
+<% if @candidate.errors.any? %>
+  <ul>
+    <% @candidate.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@candidate) do |f| %>
+
+<div class="form_field">
+  <%= f.label :name, "姓名" %>
+  <%= f.text_field :name %>
+</div>
+
+<div class="form_field">
+  <%= f.label :party, "政黨" %>
+  <%= f.text_field :party %>
+</div>
+
+<div class="form_field">
+  <%= f.label :age, "年齡" %>
+  <%= f.text_field :age %>
+</div>
+
+<div class="form_field">
+  <%= f.label :politics, "政見" %>
+  <%= f.text_area :politics %>
+</div>
+
+<div class="form_field"><%= f.submit %></div>
+
+<% end %>
