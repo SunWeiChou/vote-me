@@ -14,6 +14,7 @@ class CandidatesController < ApplicationController
       redirect_to '/candidates'
     else
       #NG
+      render :new
     end
   end
 
